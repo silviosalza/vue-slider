@@ -60,12 +60,15 @@ createApp({
     autoscroll() {
         this.interval = setInterval(this.showNext, 3000);
       },
+    stopAutoscroll() {
+      clearInterval(this.interval);
+    }, 
     
-    },
+},
 
     mounted(){
         this.autoscroll()
+        
     }
-
 
 }).mount("#app")
