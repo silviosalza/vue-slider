@@ -52,5 +52,20 @@ createApp({
         this.activeImage = this.slides.length - 1;
       }
        
-    }}
+    },
+    clickToActive(){
+        this.activeImage = 0
+
+    },
+    autoscroll() {
+        this.interval = setInterval(this.showNext, 3000);
+      },
+    
+    },
+
+    mounted(){
+        this.autoscroll()
+    }
+
+
 }).mount("#app")
