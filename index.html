@@ -17,7 +17,8 @@
             <div class="slider-wrapper" tabindex="0">
 
                 <div class="item">
-                    <img :src= "slides[activeImage].image" alt="slides[activeImage].title" />
+                    <img :src= "slides[activeImage].image" alt="slides[activeImage].title" @mouseover="stopAutoscroll"
+                    @mouseleave="autoscroll"/>
                     <div class="text">
                         <h3>{{ slides[activeImage].title }}</h3>
                         <p>
@@ -29,9 +30,7 @@
                 <div class="thumbs">
                     <div class="prev" @click="showPrev"></div>
                     <div class="next" @click="showNext"></div>
-                    <div class="thumb" :class="index === activeImage ? 'active' : ''" v-for="(image, index) in slides" @click = "clickToActive(index)"
-                    @mouseover="stopAutoscroll"
-                    @mouseleave="autoscroll">
+                    <div class="thumb" :class="index === activeImage ? 'active' : ''" v-for="(image, index) in slides" @click = "clickToActive(index)">
                         <img :src="slides[index].image" alt="slides[activeImage].title"/>
                     </div>
                 </div>
