@@ -53,8 +53,8 @@ createApp({
       }
        
     },
-    clickToActive(){
-        this.activeImage = 0
+    clickToActive(indexToShow){
+        this.activeImage = indexToShow
 
     },
     autoscroll() {

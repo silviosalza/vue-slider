@@ -29,7 +29,7 @@
                 <div class="thumbs">
                     <div class="prev" @click="showPrev"></div>
                     <div class="next" @click="showNext"></div>
-                    <div class="thumb" :class="index === activeImage ? 'active' : ''" v-for="(image, index) in slides" @click = "clickToActive"
+                    <div class="thumb" :class="index === activeImage ? 'active' : ''" v-for="(image, index) in slides" @click = "clickToActive(index)"
                     @mouseover="stopAutoscroll"
                     @mouseleave="autoscroll">
                         <img :src="slides[index].image" alt="slides[activeImage].title"/>
